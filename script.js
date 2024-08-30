@@ -23,7 +23,7 @@ function playGame() {
         let humanChoice = getHumanChoice();
     
         if (computerChoice === humanChoice) {
-            console.log(`CPU chose ${computerChoice}. It's a draw!`);
+            console.log(`CPU chose ${computerChoice}. It's a tie!`);
         } else if (computerChoice === "rock" && humanChoice === "paper") {
             console.log(`You win! ${humanChoice} beats ${computerChoice}`);
             return humanScore++
@@ -55,7 +55,7 @@ function playGame() {
     }
 
     if (computerScore === humanScore) {
-        console.log("Draw!");
+        console.log("It's a tie!");
     } else if (computerScore > humanScore) {
         console.log("You lose!");
     } else {
