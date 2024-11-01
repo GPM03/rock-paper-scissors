@@ -16,18 +16,17 @@ let humanScore = 0;
 let ties = 0;
 
 function getComputerChoice() {
-    let choice = Math.random();
-    if (choice <= 0.333) {
+    let choice = Math.floor(Math.random() * 3) + 1;
+    if (choice === 1) {
         return "rock"
-    } else if (choice > 0.333 && choice <= 0.666) {
+    } else if (choice === 2) {
         return "paper"
-    } else {
+    } else if (choice === 3) {
         return "scissor"
     }
 }
 
 function playRound(computerChoice, humanChoice) {
-    
     if (computerChoice === humanChoice) {
         roundResult.textContent = `Tie! both chose ${computerChoice}`;
         ties++;
@@ -62,9 +61,6 @@ function playRound(computerChoice, humanChoice) {
         roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
         displayComputerScore.textContent = `Computer: ${computerScore}`;
-
-    } else {
-        roundResult.textContent = "Wrong input!";
     }
 
     round++;
@@ -105,9 +101,7 @@ function playRound(computerChoice, humanChoice) {
             buttonPaper.style.display = "inline-block";
             buttonScissor.style.display = "inline-block";
         })
-        
     }
-
 }
 
 buttonRock.addEventListener("click", () => {
